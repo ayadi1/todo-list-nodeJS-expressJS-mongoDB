@@ -15,13 +15,16 @@ addTask.addEventListener("click", () => {
 addToTask.addEventListener("click", async (e) => {
   e.preventDefault();
   const taskValue = taskBody.value;
+  console.log(taskValue);
+  if(taskValue!=''){
 
-  const body = {
-    taskValue,
-  };
-  await axios.post("/task", body).then(function (response) {});
-  getAlltasck();
-  taskBody.value = "";
+    const body = {
+      taskValue,
+    };
+    await axios.post("/task", body).then(function (response) {});
+    getAlltasck();
+    taskBody.value = "";
+  }
 });
 
 // get all task
